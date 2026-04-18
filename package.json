@@ -1,0 +1,23 @@
+{
+  "name": "mcp-to-mcp-weather",
+  "version": "1.0.0",
+  "description": "AI agent orchestrating MCP tools to fetch city + weather, instrumented with New Relic",
+  "type": "module",
+  "main": "src/host/app.js",
+  "scripts": {
+    "start": "node -r newrelic src/host/app.js",
+    "start:no-nr": "node src/host/app.js",
+    "mcp-server": "node src/mcp-server/server.js",
+    "dev": "node --watch -r newrelic src/host/app.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.40.0",
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "newrelic": "^12.8.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

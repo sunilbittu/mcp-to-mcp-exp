@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MCP Weather Agent</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9B%85%3C/text%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <h1>MCP Weather Agent</h1>
+        <p class="subtitle">
+          Ask in plain English. A Claude agent calls two MCP tools (city info → weather) and renders the result.
+        </p>
+      </header>
+
+      <form id="query-form" class="query">
+        <input
+          id="query-input"
+          name="query"
+          type="text"
+          placeholder="how's the weather in Hyderabad?"
+          autocomplete="off"
+          required
+        />
+        <button type="submit" id="submit-btn">Ask</button>
+      </form>
+
+      <section id="status" class="status" hidden></section>
+
+      <section id="card-slot" class="card-slot"></section>
+
+      <details id="trace" class="trace" hidden>
+        <summary>Agent trace (MCP tool calls)</summary>
+        <pre id="trace-body"></pre>
+      </details>
+    </main>
+
+    <script src="/client.js"></script>
+  </body>
+</html>
