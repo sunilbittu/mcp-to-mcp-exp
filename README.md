@@ -1,5 +1,9 @@
 # MCP Weather Agent (with New Relic)
 
+> **Live demo (mock):** https://sunilbittu.github.io/mcp-to-mcp-exp/
+> A static, in-browser mock of the agent flow — no Node, no API keys, canned
+> data. The full app below is the real thing.
+
 A small demo of an **AI agent driving an MCP server**. Ask "how's the weather
 in Hyderabad?" in plain English and the agent:
 
@@ -109,6 +113,24 @@ Desktop, Claude Code, or any other MCP client:
   }
 }
 ```
+
+## Static mock on GitHub Pages
+
+The `docs/` folder is a self-contained static mock of the same UI. The agent
+loop and both MCP tool calls are simulated client-side using a small built-in
+city dictionary and deterministic fake weather (stable per city per day).
+Useful for previewing the UI without any backend.
+
+**Deploy**: pushed to `main`, the workflow `.github/workflows/deploy-pages.yml`
+publishes `docs/` to GitHub Pages automatically.
+
+**One-time repo setup**: in *Settings → Pages*, set **Source = GitHub Actions**.
+After the first push to `main`, the page is live at
+`https://<your-user>.github.io/<repo>/`.
+
+The mock recognises: Hyderabad, Bengaluru, Mumbai, Delhi, London, Paris,
+New York (or NYC), Tokyo, Sydney, Dubai, San Francisco (or SF), Singapore,
+Berlin, Toronto. Anything else returns a friendly error.
 
 ## Notes
 
