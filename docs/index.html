@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MCP Weather Agent (Static Mock)</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9B%85%3C/text%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <h1>MCP Weather Agent <span class="badge">mock</span></h1>
+        <p class="subtitle">
+          Static demo on GitHub Pages. The agent loop and MCP tool calls are simulated client-side with canned data — no network, no API keys.
+          <a href="https://github.com/sunilbittu/mcp-to-mcp-exp" target="_blank" rel="noopener">View source →</a>
+        </p>
+      </header>
+
+      <form id="query-form" class="query">
+        <input
+          id="query-input"
+          name="query"
+          type="text"
+          placeholder="how's the weather in Hyderabad?"
+          autocomplete="off"
+          required
+        />
+        <button type="submit" id="submit-btn">Ask</button>
+      </form>
+
+      <section id="status" class="status" hidden></section>
+
+      <section id="card-slot" class="card-slot"></section>
+
+      <details id="trace" class="trace" hidden>
+        <summary>Agent trace (MCP tool calls)</summary>
+        <pre id="trace-body"></pre>
+      </details>
+    </main>
+
+    <script src="./client.js"></script>
+  </body>
+</html>
